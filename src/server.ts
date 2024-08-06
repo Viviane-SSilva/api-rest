@@ -1,4 +1,4 @@
-import fastify from "fastify";
+import fastify from 'fastify'
 
 const app = fastify()
 
@@ -6,12 +6,13 @@ const app = fastify()
 // http://localhost:3333/hello
 
 app.get('/hello', () => {
-    return 'hELLO World'
+  return 'hELLO World'
 })
 
-app.listen({
+app
+  .listen({
     port: 3333,
-}).then(() => {
+  })
+  .then(() => {
     console.log('HTTP server running!')
-})
-
+  })
