@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable eqeqeq */
 /* eslint-disable prettier/prettier */
