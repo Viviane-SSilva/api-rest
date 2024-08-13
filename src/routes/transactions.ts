@@ -41,10 +41,8 @@ export async function transactionsRoutes(app: FastifyInstance) {
         const { id } = getTransactionParamsSchema.parse(request.params)
 
         const transaction = await knex('transactions')
-        .where({
-            session_id: sessionId,
-            id: id,
-        })
+        .where('session_id', sessionId)
+        .where('id', id)
         .first()
 
         return { transaction }
@@ -92,8 +90,7 @@ export async function transactionsRoutes(app: FastifyInstance) {
             id: crypto.randomUUID(),
             title,
             amount: type === "credit" ? amount : amount * -1,
-            session_id: sessionId
-
+            session_id: sessionId,
         })
       
         return reply.status(201).send()
